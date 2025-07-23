@@ -1,30 +1,42 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Browse from "./pages/Browse";
+import Profile from "./pages/Profile";
 
 function App() {
-  const [count, setCount] = useState(0)
+    return (
+        <Router>
+            <div className="app">
+                {/* Navigation */}
+                <nav
+                    style={{
+                        padding: "1rem",
+                        backgroundColor: "#f0f0f0",
+                        marginBottom: "2rem",
+                    }}
+                >
+                    <Link to="/" style={{ marginRight: "1rem" }}>
+                        Home
+                    </Link>
+                    <Link to="/browse" style={{ marginRight: "1rem" }}>
+                        Browse Cards
+                    </Link>
+                    <Link to="/profile" style={{ marginRight: "1rem" }}>
+                        Profile
+                    </Link>
+                </nav>
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-        </a>
-        <a href="https://react.dev" target="_blank">
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+                {/* Page Content */}
+                <main style={{ padding: "0 1rem" }}>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/browse" element={<Browse />} />
+                        <Route path="/profile" element={<Profile />} />
+                    </Routes>
+                </main>
+            </div>
+        </Router>
+    );
 }
 
-export default App
+export default App;

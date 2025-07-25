@@ -26,7 +26,7 @@ function App() {
                     </Link>
                 </nav>
 
-                {/* Page Content */}
+                {/* Page */}
                 <main style={{ padding: "0 1rem" }}>
                     <Routes>
                         <Route path="/" element={<Home />} />

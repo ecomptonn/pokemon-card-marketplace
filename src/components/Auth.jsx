@@ -84,7 +84,7 @@ function Auth() {
                 margin: "20px 0",
             }}
         >
-            <h3>Sign In / Sign Up</h3>
+            <h3>Sign In</h3>
 
             <form onSubmit={handleEmailAuth} style={{ marginBottom: "20px" }}>
                 <div style={{ marginBottom: "10px" }}>
